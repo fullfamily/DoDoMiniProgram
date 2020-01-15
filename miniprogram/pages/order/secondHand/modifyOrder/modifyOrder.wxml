@@ -1,0 +1,69 @@
+<!--miniprogram/pages/publishOrder/publishOrder.wxml-->
+<view class="container">
+  <view class='secondhand-order' wx:if='{{orderType[typeIndex] == "secondHand"}}'>
+    <form bindsubmit="formSubmit">
+      <view class="infor">
+        <text>标题：</text>
+        <input class="infor-title" name='title' auto-focus value="{{orderDetail.title}}" />
+      </view>
+      <view class="infor">
+        <text>价格：</text>
+        <input class="infor-price" name='price' type="number" value="{{orderDetail.price}}" />
+      </view>
+      <view class="infor">
+        <picker bindchange="bindPickerChange" name='category' value="{{index}}" range="{{orderClass}}">
+          <view class="infor-class">
+            类别：{{orderClass[index]}}
+          </view>
+        </picker>
+      </view>
+      <view class="infor">
+        <text>描述：</text>
+        <textarea wx:if='{{editFlag}}' name='description' class='infor-description' bindblur="bindTextAreaBlur" value="{{orderDetail.description}}" auto-height />
+      </view>
+
+      <view class="infor-images">
+        <text style="padding:13px">图片：</text>
+        <view class="image_content">
+
+          <view class='image' wx:for="{{img_arr}}" wx:key="index">
+
+            <image class="moment_img" bindlongpress="deleteImg" bindtap="previewImg" data-index="{{index}}" src="{{item}}"></image>
+          </view>
+
+          <view class='image' wx:if='{{img_arr.length < maxNumber}}'>
+
+            <image bindtap="chooseImage" class="moment_img" src='/images/addImage.png'></image>
+          </view>
+        </view>
+      </view>
+      <view class="contact">
+        <text>联系方式</text>
+        <view class="infor-contact">
+          <text>手机：</text>
+          <input name='phone' class="contact-phone" type="number" value="{{orderDetail.contact.phone}}" />
+        </view>
+        <view class="infor-contact">
+          <text>微信：</text>
+          <input name='weChat' class="contact-phone" value="{{orderDetail.contact.weChat}}" />
+        </view>
+        <view class="infor-contact">
+          <text>QQ：</text>
+          <input name='qq' class="contact-phone" value="{{orderDetail.contact.qq}}" />
+        </view>
+      </view>
+      
+
+      <button class='publish' form-type="submit" open-type='openSetting'>
+        <image class='publishImage' src='/images/publish.png'></image>
+        <view>发布</view>
+      </button>
+    </form>
+  </view>
+  <view class="makeup-order" wx:elif='{{orderType[typeIndex] == "makeUp"}}'>
+    <text>您要修改makeup订单</text>
+  </view>
+  <view class="sharecar-order" wx:elif='{{orderType[typeIndex] == "shareCar"}}'>
+    <text>您要修改shareCar订单</text>
+  </view>
+</view>

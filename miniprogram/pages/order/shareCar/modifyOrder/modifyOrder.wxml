@@ -1,0 +1,70 @@
+<!--miniprogram/pages/publishOrder/publishOrder.wxml-->
+<view class="container">
+  <view class='secondhand-order'>
+    <form bindsubmit="formSubmit">
+      <view class="infor">
+        <text>起点：</text>
+        <input class="infor-departure" name='departure' auto-focus value="{{orderDetail.departure}}" />
+      </view>
+      <view class="infor">
+        <text>终点：</text>
+        <input class="infor-destination" name='destination' auto-focus value="{{orderDetail.destination}}"/>
+      </view>
+      <view class="infor">
+        <text>出发时间：</text>
+        <picker mode="multiSelector" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" value="{{multiIndex}}" range="{{multiArray}}">
+        <button>{{departureTime}}</button>
+          <!-- <input name="departureTime" value='{{departureTime}}' placeholder='选择时间' style="pointer-events: none; " /> -->
+        </picker>
+      </view>
+      <view class="infor">
+        <text>总人数：</text>
+        <input name='totalNumber' class='infor-totalNumber' type="number" value="{{orderDetail.totalNumber}}"></input>
+      </view>
+            <view class="infor">
+        <text>已参与人数：</text>
+        <input name='joinedNumber' class='infor-joinedNumber' type="number" value="{{orderDetail.joinedNumber}}"></input>
+      </view>
+      <view class="infor">
+        <text>描述：</text>
+        <textarea name='description' class='infor-description' bindblur="bindTextAreaBlur" value="{{orderDetail.description}}" auto-height />
+      </view>
+
+      <view class="infor-images">
+        <text style="padding:13px">图片：</text>
+        <view class="image_content">
+
+          <view class='image' wx:for="{{img_arr}}" wx:key="index">
+
+            <image class="moment_img" bindlongpress="deleteImg" bindtap="previewImg" data-index="{{index}}" src="{{item}}"></image>
+          </view>
+
+          <view class='image' wx:if='{{img_arr.length < maxNumber}}'>
+
+            <image bindtap="chooseImage" class="moment_img" src='/images/addImage.png'></image>
+          </view>
+        </view>
+      </view>
+      <view class="contact">
+        <text>联系方式</text>
+        <view class="infor-contact">
+          <text>手机：</text>
+          <input name='phone' class="contact-phone" type="number" value="{{orderDetail.contact.phone}}"></input>
+        </view>
+        <view class="infor-contact">
+          <text>微信：</text>
+          <input name='weChat' class="contact-phone" value="{{orderDetail.contact.weChat}}"/>
+        </view>
+        <view class="infor-contact">
+          <text>QQ：</text>
+          <input name='qq' class="contact-phone" value="{{orderDetail.contact.qq}}"/>
+        </view>
+      </view>
+
+      <button class='publish' form-type="submit" open-type='openSetting'>
+        <image class='publishImage' src='/images/publish.png'></image>
+        <view>发布</view>
+      </button>
+    </form>
+  </view>
+</view>

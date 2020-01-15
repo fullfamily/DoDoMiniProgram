@@ -1,0 +1,53 @@
+<!--miniprogram/pages/personalCenter/personalCenter.wxml-->
+<import src="/template/authorization/authorization.wxml" />
+<view wx:if="{{!hasUserInfo}}">
+  <view wx:if="{{canIUse}}">
+    <template is="authorization"></template>
+  </view>
+  <view wx:else>
+    <view>请升级微信版本</view>
+  </view>
+</view>
+<view wx:else class="container">
+  <block class='userinfo'>
+    <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover" bindtap="toUserCenter"></image>
+    <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+  </block>
+  <view class="weui-cells weui-cells_after-title" style="width:100%">
+    <navigator url="../personalHub/aboutSystem/aboutSystem" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+      <view class="weui-cell__hd">
+        <image src="../../images/personalCenter/editInfo.png" style="margin-right: 16px;vertical-align: middle;width:25px; height: 25px;"></image>
+      </view>
+      <view class="weui-cell__bd">修改资料</view>
+      <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+    </navigator>
+    <navigator url="../personalHub/myPublishRecords/myPublishRecords" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+      <view class="weui-cell__hd">
+        <image src="../../images/personalCenter/records.png" style="margin-right: 16px;vertical-align: middle;width:25px; height: 25px;"></image>
+      </view>
+      <view class="weui-cell__bd">我的发布</view>
+      <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+    </navigator>
+    <navigator url="../personalHub/myFavorites/myFavorites" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+      <view class="weui-cell__hd">
+        <image src="../../images/personalCenter/favorite.png" style="margin-right: 16px;vertical-align: middle;width:25px; height: 25px;"></image>
+      </view>
+      <view class="weui-cell__bd">我的收藏</view>
+      <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+    </navigator>
+        <navigator url="../personalHub/helpAndFeedback/helpAndFeedback" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+      <view class="weui-cell__hd">
+        <image src="../../images/personalCenter/help.png" style="margin-right: 16px;vertical-align: middle;width:25px; height: 25px;"></image>
+      </view>
+      <view class="weui-cell__bd">帮助反馈</view>
+      <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+    </navigator>
+    <navigator url="../personalHub/aboutSystem/aboutSystem" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+      <view class="weui-cell__hd">
+        <image src="../../images/personalCenter/system.png" style="margin-right: 16px;vertical-align: middle;width:25px; height: 25px;"></image>
+      </view>
+      <view class="weui-cell__bd">关于DoDo</view>
+      <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+    </navigator>
+  </view>
+</view>

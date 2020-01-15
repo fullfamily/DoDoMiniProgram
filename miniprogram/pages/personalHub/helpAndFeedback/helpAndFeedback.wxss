@@ -1,0 +1,22 @@
+.container {
+  padding-top: 50%;
+  padding-left: 10%;
+}
+
+.help {
+  display: flex;
+  flex-direction: row;
+  /* line-height: 20rpx; */
+  border: 1rpx, solid, wheat;
+  padding: 20px;
+}
+
+.content {
+  font-weight: bold;
+}
+
+.image {
+  margin-left: 10rpx;
+  height: 40rpx;
+  width: 40rpx;
+}

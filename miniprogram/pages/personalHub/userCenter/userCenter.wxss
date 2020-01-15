@@ -1,0 +1,90 @@
+@import "/template/listOne/listOne.wxss";
+
+.main {
+  background-color: white;
+  width: 100%;
+}
+
+
+.swiper-tab {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  line-height: 80rpx;
+  border-bottom: 2rpx solid #777;
+  padding-left: 10%;
+  padding-right: 10%;
+}
+
+.tab-item {
+  width: 50%;
+  text-align: center;
+  font-family: Tahoma;
+  font-size: 15px;
+  color: #777;
+}
+
+.swiper {
+  height: 1100px;
+  background: white;
+}
+
+.on {
+  color: #636;
+  border-bottom: 5rpx solid rgb(196, 86, 159);
+}
+
+.orderList {
+  width: 100%;
+  /* display: flex;   *//* flex-direction: row; *//* 两列展示*//* flex-wrap: wrap;       *//* align-items: center; *//* justify-content: space-between; */
+  padding: 15rpx;
+  /* border: 100rpx 0;
+  border-style: solid;
+  border-color: #ECECEC; */
+}
+
+.orderGrid {
+  /* position: relative; */
+  float: left;
+  padding: 20px 10px;
+  margin-right: 5rpx;
+  /* 决定列数*//* width: 50%;      */
+  box-sizing: border-box;
+}
+
+.order-content {
+  height: 250rpx;
+  width: 80%;
+  margin-left: 10rpx;
+  margin-right: 10rpx;
+  padding-left: 10rpx;
+  padding-right: 10rpx;
+  display: flex;
+  /* border:#B38B2D, 1rpx, solid; */
+  align-items: center;
+  border-bottom: 1rpx solid #ececec;
+}
+
+.order-content-image {
+  width: 300rpx;
+  height: 200rpx;
+}
+
+.order-content-info {
+  font-size: 25rpx;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.order-content-info-title, .order-content-info-price,
+.order-content-info-details, .order-content-info-number {
+  height: 42rpx;
+  line-height: 42rpx;
+  margin-left: 30rpx;
+}
+
+.order-content-info-price {
+  color: green;
+  font-size: 30rpx;
+}

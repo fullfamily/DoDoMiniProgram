@@ -1,0 +1,41 @@
+<!--template/listOne/listOne.wxml-->
+<template name="listForm">
+  <!-- <block wx:for="{{list}}" wx:key="_id"> -->
+  <view class="list_box {{item.state == 'finished' ? 'changeBgc' : ''}}" bindtouchstart="bindTouchStart" bindtouchend="bindTouchEnd" bindtap="toOrderDetail" bindlongtap="toLongTap" data-index="{{index}}" data-type="{{type}}" data-category="{{category}}"
+    data-puborlike="{{puborlike}}">
+    <image lazy-load class="list_poster" src="{{item.images_fileID[0]}}"></image>
+    <view class="list_content">
+      <view class="list_top">
+        <view class="list_word" wx:if="{{item.type == 'secondHand' || item.type == 'makeUp'}}">
+          <view class="list_title text-cut" wx:if="{{item.type == 'secondHand' || item.type == 'makeUp'}}">{{item.title}}</view>
+          <!-- <view class="list_title text-cut" wx:else>{{item.description}}</view> -->
+          <view class="list_nowPrice" wx:if="{{item.type == 'secondHand'}}">￥{{item.nowPrice}}</view>
+          <view class="list_nowPrice" wx:if="{{item.type == 'makeUp'}}">￥{{item.price}}</view>
+
+        </view>
+        <view class="list_location" wx:if="{{item.type == 'shareCar'}}">
+          <view class="list_departure text-cut ">{{item.departure}}</view>
+          <image class="list_arrow" mode="aspectFill" src="/images/a2b.png "></image>
+          <view class="list_destination ">{{item.destination}}</view>
+        </view>
+        <view class="userInfo">
+          <!-- <text class="userInfo-nickname">{{item.userInfo.nickName}}</text> -->
+          <image class="userInfo-avatar" mode="cover" src="{{item.userInfo.avatarUrl}}"></image>
+        </view>
+      </view>
+      <view class="list_middle">
+        <view class="list_date text-cut" wx:if="{{item.type == 'secondHand'}}">{{item.publishDate}}发布</view>
+        <view class="list_date text-cut" wx:if="{{item.type == 'makeUp' || item.type == 'shareCar'}}">{{item.deadline}}截止</view>
+      </view>
+      <view class="list_bottom">
+        <view class="list_description text-cut">{{item.description}}...</view>
+
+        <view class="list_like_info ">
+
+          <view class="list_like_number ">{{item.likes}}</view>
+          <image class="list_like_icon " src="/images/like.png "></image>
+        </view>
+      </view>
+    </view>
+  </view>
+</template>

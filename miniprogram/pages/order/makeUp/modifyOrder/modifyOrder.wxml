@@ -1,0 +1,94 @@
+<!--miniprogram/pages/publishOrder/publishOrder.wxml-->
+<view class="container">
+  <view class='makeup-order'>
+    <form bindsubmit="formSubmit">
+      <view class="infor">
+        <text>标题：</text>
+        <input class="infor-title" name='title' auto-focus value="{{orderDetail.title}}" />
+      </view>
+      <view class="infor">
+        <text>价格：</text>
+        <input class="infor-price" name='price' type="number" value="{{orderDetail.price}}" />
+      </view>
+      <view class="infor">
+        <picker bindchange="bindCategoryChange" name='category' value="{{indexOfCategory}}" range="{{orderClass}}">
+          <view class="infor-class">
+            类别：{{orderClass[indexOfCategory]}}
+          </view>
+        </picker>
+      </view>
+      <view class="infor">
+        <picker bindchange="bindPlatformChange" name='platform' value="{{indexOfPlatform}}" range="{{platforms}}">
+          <view class="infor-class">
+            平台：{{platforms[indexOfPlatform]}}
+          </view>
+        </picker>
+      </view>
+      <view class="infor">
+        <text>链接：</text>
+        <textarea name='link' class='infor-link' bindblur="bindTextAreaBlur" value="{{orderDetail.link}}" auto-height />
+      </view>
+      <view class="infor">
+        <text>描述：</text>
+        <textarea name='description' class='infor-description' bindblur="bindTextAreaBlur" value="{{orderDetail.description}}" auto-height />
+      </view>
+      <view class="infor">
+        <text>所需总人数：</text>
+        <input name='totalNumber' class='infor-totalNumber' type="number" value="{{orderDetail.totalNumber}}"></input>
+      </view>
+      <view class="infor">
+        <text>已拼单人数：</text>
+        <input name='joinedNumber' class='infor-totalNumber' type="number" value="{{orderDetail.joinedNumber}}">></input>
+      </view>
+      <view class="infor">
+        <picker mode="date" bindchange="bindDateChange" name='date' value="{{date}}">
+          <view class="infor-date">
+            截止日期：{{date}}
+          </view>
+        </picker>
+      </view>
+      <view class="infor">
+        <picker mode="time" bindchange="bindTimeChange" name='time' value="{{time}}">
+          <view class="infor-time">
+            截止时间：{{time}}
+          </view>
+        </picker>
+      </view>
+      <view class="infor-images">
+        <text style="padding:13px">图片：</text>
+        <view class="image_content">
+
+          <view class='image' wx:for="{{img_arr}}" wx:key="index">
+
+            <image class="moment_img" bindlongpress="deleteImg" bindtap="previewImg" data-index="{{index}}" src="{{item}}"></image>
+          </view>
+
+          <view class='image' wx:if='{{img_arr.length < maxNumber}}'>
+
+            <image bindtap="chooseImage" class="moment_img" src='/images/addImage.png'></image>
+          </view>
+        </view>
+      </view>
+      <view class="contact">
+        <text>联系方式</text>
+        <view class="infor-contact">
+          <text>手机：</text>
+          <input name='phone' class="contact-phone" type="number" value="{{orderDetail.contact.phone}}"></input>
+        </view>
+        <view class="infor-contact">
+          <text>微信：</text>
+          <input name='weChat' class="contact-phone" value="{{orderDetail.contact.weChat}}"/>
+        </view>
+        <view class="infor-contact">
+          <text>QQ：</text>
+          <input name='qq' class="contact-phone" value="{{orderDetail.contact.qq}}"/>
+        </view>
+      </view>
+
+      <button class='publish' form-type="submit" open-type='openSetting'>
+        <image class='publishImage' src='/images/publish.png'></image>
+        <view>发布</view>
+      </button>
+    </form>
+  </view>
+</view>

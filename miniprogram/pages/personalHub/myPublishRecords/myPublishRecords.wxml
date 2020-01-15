@@ -1,0 +1,101 @@
+<import src="/template/listOne/listOne.wxml" />
+<import src="/template/search/search" />
+<view class='main'>
+  <!--顶部搜索栏-->
+  <view class="heard">
+  <template is="userSearch" data="{{searchContent:searchContent, item:item}}"></template>
+    <!-- <view class="heard-search">
+      <image src="/images/search.png" class="heard-search-icon" />
+      <input bindinput="getUserSearchContent" bindconfirm="searchOrder" placeholder="请输入搜索内容"></input>
+    </view> -->
+  </view>
+  <view class="swiper-tab">
+    <view class="tab-item {{currentTab == 0 ? 'on' : ''}}" data-current="0" bindtap="swichNav">{{orderTypeInChinese[0]}}</view>
+    <view class="tab-item {{currentTab==1 ? 'on' : ''}}" data-current="1" bindtap="swichNav">{{orderTypeInChinese[1]}}</view>
+    <view class="tab-item {{currentTab==2 ? 'on' : ''}}" data-current="2" bindtap="swichNav">{{orderTypeInChinese[2]}}</view>
+    <view class="tab-item {{currentTab==3 ? 'on' : ''}}" data-current="3" bindtap="swichNav">{{orderTypeInChinese[3]}}</view>
+  </view>
+
+  <!-- 内容主体-->
+  <swiper class="swiper" current="{{currentTab}}" duration="200" bindchange="swiperChange">
+    <swiper-item>
+      <scroll-view bindscrolltolower="lower" class="scroll-orders-list" scroll-y="true" style="height:100%">
+        <view class="showOrder">
+          <view class="orderList">
+
+            <!-- bindtouchstart="touchstart" bindtouchmove="touchmove" 禁止滑动切换 -->
+            <view class="orderGrid" wx:for="{{allOrderList}}" wx:key="{{index}}">
+              <view class="page__bd">
+                <!-- <mp-slideview buttons="{{slideButtons}}" icon="{{true}}" bindbuttontap="slideButtonTap" data-itemindex="{{index}}" data-type="all"> -->
+                <view class="weui-cells">
+                  <template is="listForm" data="{{index:index,  type:'all', item:item}}"></template>
+                </view>
+                <!-- </mp-slideview> -->
+              </view>
+            </view>
+          </view>
+        </view>
+</scroll-view>
+</swiper-item>
+<!-- 二手展示首页 -->
+<!-- wx:elif='{{currentTab == 1}}' -->
+<swiper-item>
+  <scroll-view bindscrolltolower="lower" class="scroll-orders-list" scroll-y="true" style="height:100%">
+    <view class="showOrder">
+      <view class="orderList">
+        <view class="orderGrid" wx:for="{{secondHandOrderList}}" wx:key="{{index}}">
+          <view class="page__bd">
+            <!-- <mp-slideview buttons="{{slideButtons}}" icon="{{true}}" bindbuttontap="slideButtonTap" data-itemindex="{{index}}" data-type="secondHand"> -->
+            <view class="weui-cells">
+              <template is="listForm" data="{{index:index,  type:'secondHand', item:item}}"></template>
+            </view>
+            <!-- </mp-slideview> -->
+          </view>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+</swiper-item>
+<!-- 拼单展示首页 -->
+<!-- wx:elif='{{currentTab == 2}}' -->
+<swiper-item>
+  <scroll-view bindscrolltolower="lower" class="scroll-orders-list" scroll-y="true" style="height:100%">
+    <view class="showOrder">
+      <view class="orderList">
+        <view class="orderGrid" wx:for="{{makeUpOrderList}}" wx:key="{{index}}">
+          <view class="page__bd">
+            <view class="weui-slidecells">
+              <!-- <mp-slideview buttons="{{slideButtons}}" icon="{{true}}" bindbuttontap="slideButtonTap" data-itemindex="{{index}}" data-type="all"> -->
+              <view class="weui-cells">
+                <template is="listForm" data="{{index:index,  type:'makeUp', item:item}}"></template>
+              </view>
+              <!-- </mp-slideview> -->
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+</swiper-item>
+<!-- 拼车首页 -->
+<!-- wx:elif='{{currentTab == 3}}' -->
+<swiper-item>
+  <view class="showOrder">
+    <view class="orderList">
+      <view class="orderGrid" wx:for="{{shareCarOrderList}}" wx:key="index">
+        <view class="page__bd">
+          <view class="weui-slidecells">
+            <!-- <mp-slideview buttons="{{slideButtons}}" icon="{{true}}" bindbuttontap="slideButtonTap"> -->
+            <view class="weui-cells">
+              <template is="listForm" data="{{index:index,  type:'shareCar', item:item}}"></template>
+            </view>
+            <!-- </mp-slideview> -->
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</swiper-item>
+
+</swiper>
+</view>

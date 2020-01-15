@@ -1,0 +1,45 @@
+<!--pages/personalHub/userCenter/userCenter.wxml-->
+
+<import src="/template/listOne/listOne.wxml" />
+<view class="main">
+  <block class="userInfo">
+    <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+    <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+  </block>
+
+  <view class="content">
+    <view class="swiper-tab">
+      <view class="tab-item {{currentTab==0 ? 'on' : ''}}" data-current="0" bindtap="swichNav">动态</view>
+      <view class="tab-item {{currentTab==1 ? 'on' : ''}}" data-current="1" bindtap="swichNav">喜欢</view>
+    </view>
+    <swiper class="swiper" current="{{currentTab}}" duration="200" bindchange="swiperChange">
+      <!-- 发布的订单 -->
+      <swiper-item>
+        <view class="scroll-orders-list" style="height:100%">
+          <view class="showOrder">
+            <view class="orderList">
+              <!-- bindtouchstart="touchstart" bindtouchmove="touchmove" 禁止滑动切换 -->
+
+              <block wx:for="{{allPublishedOrderList}}" wx:key="index">
+                <template is="listForm" data="{{index:index, puborlike:'publish', type:item.type, item:item}}"></template>
+              </block>
+            </view>
+          </view>
+        </view>
+      </swiper-item>
+      <!-- 喜欢的订单 -->
+      <swiper-item>
+        <view class="scroll-orders-list" style="height:100%">
+          <view class="showOrder">
+            <view class="orderList">
+              <!-- bindtouchstart="touchstart" bindtouchmove="touchmove" 禁止滑动切换 -->
+              <block wx:for="{{allLikeOrderList}}" wx:key="index">
+                <template is="listForm" data="{{index:index, puborlike:'like', type:item.type, item:item}}"></template>
+              </block>
+            </view>
+          </view>
+        </view>
+      </swiper-item>
+    </swiper>
+  </view>
+</view>

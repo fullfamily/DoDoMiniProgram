@@ -1,0 +1,62 @@
+{
+  "pages": [
+    "pages/homepage/homepage",
+    "pages/selectPublishOrderType/selectPublishOrderType",
+    "pages/personalCenter/personalCenter",
+
+    "pages/order/secondHand/publishOrder/publishOrder",
+    "pages/order/secondHand/modifyOrder/modifyOrder",
+    "pages/order/secondHand/visitOrder/visitOrder",
+
+    "pages/order/makeUp/publishOrder/publishOrder",
+    "pages/order/makeUp/modifyOrder/modifyOrder",
+    "pages/order/makeUp/visitOrder/visitOrder",
+
+    "pages/order/shareCar/publishOrder/publishOrder",
+    "pages/order/shareCar/modifyOrder/modifyOrder",
+    "pages/order/shareCar/visitOrder/visitOrder",
+
+    "pages/order/searchedOrderList/searchedOrderList",
+
+    "pages/personalHub/editUserInfo/editUserInfo",
+    "pages/personalHub/myPublishRecords/myPublishRecords",
+    "pages/personalHub/myFavorites/myFavorites",
+    "pages/personalHub/helpAndFeedback/helpAndFeedback",
+    "pages/personalHub/aboutSystem/aboutSystem",
+    "pages/personalHub/userCenter/userCenter"
+  ],
+  "window": {
+    "backgroundColor": "#FFCCFF",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#F6F6F6",
+    "navigationBarTitleText": "DoDo好物",
+    "navigationBarTextStyle": "black"
+  },
+  "sitemapLocation": "sitemap.json",
+  "style": "v2",
+  "tabBar": {
+    "color": "#8a8a8a",
+    "selectedColor": "#663366",
+    "borderStyle": "white",
+    "list": [
+      {
+        "iconPath": "images/tabBar/homepage1.png",
+        "selectedIconPath": "images/tabBar/homepage2.png",
+        "pagePath": "pages/homepage/homepage",
+        "text": "首页"
+      },
+      {
+        "iconPath": "images/tabBar/addOrder1.png",
+        "selectedIconPath": "images/tabBar/addOrder2.png",
+        "pagePath": "pages/selectPublishOrderType/selectPublishOrderType",
+        "text": "发布"
+      },
+      {
+        "iconPath": "images/tabBar/personalCenter1.png",
+        "selectedIconPath": "images/tabBar/personalCenter2.png",
+        "pagePath": "pages/personalCenter/personalCenter",
+        "text": "主页"
+      }
+    ]
+  }
+}

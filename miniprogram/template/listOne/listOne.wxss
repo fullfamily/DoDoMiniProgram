@@ -1,0 +1,233 @@
+.list_box {
+  width: 100%;
+  height: 300rpx;
+  display: flex;
+  align-items: center;
+  padding: 20rpx;
+  box-sizing: border-box;
+  margin-top: 10rpx;
+  border-bottom: 2rpx groove rgb(238, 231, 231);
+}
+.changeBgc {
+  background-color: #f8f4f4;
+}
+.list_poster {
+  width: 230rpx;
+  height: 230rpx;
+}
+
+.list_content {
+  height: 230rpx;
+  width: calc(100% - 230rpx);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 0 20rpx;
+  padding-right: 5rpx;
+  box-sizing: border-box;
+}
+
+.list_top {
+  /* border-style: solid; */
+  height: 150rpx;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-right: 0rpx;
+  /* box-sizing: border-box; */
+}
+
+.list_word {
+  /* border-style:solid; */
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  box-sizing: border-box;
+}
+.list_location {
+  /* border-style: solid; */
+  display: flex;
+  flex-direction: row;
+  /* position: fixed;
+  float: left; */
+  width: 80%;
+  height: 35rpx;
+  justify-content: space-between;
+  align-items: center;
+  /* justify-content: center; */
+}
+.userInfo {
+  /* border-style: solid; */
+  display: flex;
+  flex-direction: row;
+  height: 100rpx;
+  /* width: 40%; */
+  box-sizing: border-box;
+  margin-right: 0rpx;
+  padding: 0;
+  /* flex-end 主轴结束点对齐 */
+  justify-content: flex-end;
+}
+
+.userInfo-avatar {
+  /* border-style:solid; */
+  width: 88rpx;
+  height: 88rpx;
+  border-radius: 50%;
+  margin-right: 0rpx;
+  padding: 0;
+  /* padding-right: 5rpx;
+  position: fixed;
+  right: true; */
+}
+
+.userInfo-nickname {
+  /* border-style: solid;*/
+  margin-top: 50rpx;
+  display: flex;
+  align-items: center;
+}
+
+.list_title_price{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  justify-items: space-between;
+}
+.list_title {
+  width: 100%;
+  font-size: 36rpx;
+  letter-spacing: 3rpx;
+  line-height: 45rpx;
+  margin-bottom: 10rpx;
+  /* 超出一行文字自动隐藏 */
+  overflow: hidden;
+  /* 文字隐藏后添加省略号 */
+  text-overflow: ellipsis;
+  /* 强制不换行 */
+  white-space: nowrap;
+}
+
+.list_nowPrice {
+  /* padding-top: 10rpx; */
+  width: 100%;
+  letter-spacing: 3rpx;
+  line-height: 45rpx;
+  font-size: 36rpx;
+  color: rgb(255, 0, 0);
+  margin-bottom: 10rpx;
+}
+
+.list_description {
+  /* 超出一行文字自动隐藏 */
+  overflow: hidden;
+  /* 文字隐藏后添加省略号 */
+  text-overflow: ellipsis;
+  /* 强制不换行 */
+  white-space: nowrap;
+}
+
+.list_middle {
+  /* border-style: solid;*/
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.list_departure {
+  /* border-style: solid; */
+  margin-left: 5rpx;
+  margin-right: 5rpx;
+  width: 35%;
+  font-size: 32rpx;
+  /* letter-spacing: 5rpx; */
+  /* display: flex; */
+  /* align-items: center; */
+  /* justify-content: center; */
+  /* 超出一行文字自动隐藏 */
+  overflow: hidden;
+  /* 文字隐藏后添加省略号 */
+  text-overflow: ellipsis;
+  /* 强制不换行 */
+  white-space: nowrap;
+}
+
+.list_destination {
+  /* border-style: solid; */
+  margin-left: 5rpx;
+  margin-right: 5rpx;
+  width: 35%;
+  font-size: 32rpx;
+  /* letter-spacing: 5rpx; */
+  /* display: flex; */
+  /* align-items: center; */
+  /* justify-content: center; */
+  /* 超出一行文字自动隐藏 */
+  overflow: hidden;
+  /* 文字隐藏后添加省略号 */
+  text-overflow: ellipsis;
+  /* 强制不换行 */
+  white-space: nowrap;
+}
+
+.list_arrow {
+  /* border-style: solid; */
+  width: 20%;
+  height: 35rpx;
+}
+
+.list_date {
+  padding: 10rpx 0rpx;
+  width: 100%;
+  font-size: 30rpx;
+  letter-spacing: 3rpx;
+  line-height: 40rpx;
+  color: rgb(236, 149, 149);
+}
+
+.list_bottom {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  border-bottom: 1rpx solid #eee;
+  padding-bottom: 10rpx;
+}
+
+.list_nowPrice {
+  font-size: 40rpx;
+  color: green;
+}
+
+.list_time {
+  font-size: 28rpx;
+  letter-spacing: 2rpx;
+  color: rgb(129, 129, 129);
+}
+
+.list_like_info {
+  /* border-style: groove; */
+  display: flex;
+  flex-direction: row-reverse;
+  width: 30%;
+  height: 35rpx;
+  margin-right: 5rpx;
+  align-items: center;
+}
+
+.list_like_number {
+  font-size: 30rpx;
+  letter-spacing: 3rpx;
+  line-height: 30rpx;
+  color: rgb(129, 129, 129);
+}
+
+.list_like_icon {
+  padding-right: 10rpx;
+  width: 50rpx;
+  height: 50rpx;
+}

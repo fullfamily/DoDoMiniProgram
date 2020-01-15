@@ -1,0 +1,326 @@
+/* pages/order/visitOrder/visitOrder.wxss */
+
+.swiper {
+  width: 100%;
+  height: 400rpx;
+  top: 10rpx;
+  bottom: 10rpx;
+  background: rgb(248, 236, 245);
+}
+
+.slide-image {
+  /* width: inherit; *//* height: 300rpx; */
+  width: 100%;
+}
+
+.container {
+  /*border-style: solid;*/
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.top_contain {
+  width: 95%;
+  /*border-style: solid;*/
+  display: flex;
+  flex-direction: row;
+  /* justify-content: space-around; */
+  align-items: center;
+  padding: 10rpx, 10rpx;
+  margin-top: 0rpx;
+  box-sizing: border-box;
+}
+
+.basic_info {
+  width: 80%;
+  /*border-style: solid;*/
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  /* align-items: center; */
+  padding: 10rpx, 10rpx;
+  margin-top: 0rpx;
+  box-sizing: border-box;
+  /* border-style: groove; */
+}
+.row1 {
+  /*border-style: solid;*/
+  display: flex;
+  flex-direction: row;
+  /* justify-content: space-between; */
+  align-items: center;
+  vertical-align: center;
+  margin-top: 5rpx;
+  padding: 0;
+}
+
+.row2 {
+  /*border-style: solid;*/
+  display: flex;
+  flex-direction: row;
+  /* justify-content: space-between; */
+  align-items: center;
+  vertical-align: center;
+  margin-top: 5rpx;
+  padding: 0;
+}
+
+.row3 {
+  /*border-style: solid;*/
+  display: flex;
+  flex-direction: row;
+  /* justify-content: space-between; */
+  align-items: center;
+  vertical-align: center;
+  margin-top: 5rpx;
+  margin-bottom: 5rpx;
+  padding: 0;
+}
+
+.title {
+  /*border-style: solid;*/
+  padding-top: 10rpx;
+  font-size: 34rpx;
+  color: black;
+  letter-spacing: 3rpx;
+  vertical-align: center;
+}
+
+.price_box {
+  /*border-style: solid;*//* margin-top: 20rpx; */
+  display: flex;
+  align-items: flex-end;
+}
+
+.category {
+  /*border-style: solid;*/
+  /* padding-top: 10rpx; */
+  font-size: 30rpx;
+  color: rgba(119, 97, 97, 0.301);
+  letter-spacing: 3rpx;
+  vertical-align: center;
+}
+
+.now_price {
+  /*border-style: solid;*/
+  font-size: 42rpx;
+  color: rgb(247, 6, 38);
+  vertical-align: center;
+}
+
+.old_price {
+  /*border-style: solid;*/
+  padding-left: 30rpx;
+  font-size: 33rpx;
+  color: rgb(247, 6, 38);
+  text-decoration: line-through;
+  vertical-align: center;
+}
+
+.like_info {
+  /* border-style: groove; */
+  display: flex;
+  flex-direction: row-reverse;
+  width: 18%;
+  height: 80rpx;
+  margin-right: 5rpx;
+  align-items: center;
+}
+
+.like_number {
+  /* border-style: solid; */
+  font-size: 36rpx;
+  letter-spacing: 3rpx;
+  line-height: 36rpx;
+  color: rgb(129, 129, 129);
+}
+
+.like_icon {
+  /* border-style: solid; */
+  padding-right: 20rpx;
+  margin-top: 10rpx;
+  align-items: center;
+  width: 50rpx;
+  height: 50rpx;
+}
+.middle_contain {
+  width: 95%;
+   /*border-style: solid;*/
+  display: flex;
+  flex-direction: column;
+  margin-top: 20rpx;
+  /* border-bottom: 2rpx solid #777; */
+  /* justify-content: space-between; */
+}
+
+.space {
+  width: 100%;
+  height: 20rpx;
+  background: rgb(238, 233, 233);
+}
+.sub_title {
+  width: 100%;
+  height: 80rpx;
+  display: flex;
+  /* 子view垂直居中 */
+  align-items: center;
+  /* 内容垂直居中 */
+  vertical-align: center;
+  justify-content: space-between;
+  margin-left: 10rpx;
+  border-bottom: 2rpx groove rgb(238, 231, 231);
+
+  font-size: 34rpx;
+  letter-spacing: 3rpx;
+}
+
+.description {
+  /* border: 1px, solid, gray; */
+  width: 100%;
+  padding: 15rpx;
+  margin: 10rpx;
+  font-size: 32rpx;
+  color: rgb(168, 160, 160);
+  letter-spacing: 3rpx;
+  font-family: 'SimHei';
+  border-bottom: 2rpx groove rgb(238, 231, 231);
+}
+.bottom_contain{
+  width: 95%;
+  /* /*border-style: solid;*/ 
+  display: flex;
+  flex-direction: column;
+  margin-top: 20rpx;
+  /* border-bottom: 2rpx solid #777; */
+  /* justify-content: space-between; */
+}
+.bottom_user {
+  width: 95%;
+  height: 300rpx;
+  /* border-style: solid; */
+  padding: 0rpx, 10rpx;
+  /* margin-top: 20rpx; */
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  /* justify-content: space-between; */
+  align-items: center;
+  
+  /* border-style: groove; */
+}
+
+.userinfo {
+  /* border-style: solid; */
+  width: 35%;
+  align-items: center;
+}
+
+.userinfo-avatar {
+  /*border-style: solid;*/
+  width: 128rpx;
+  height: 128rpx;
+  border-radius: 50%;
+}
+.userInfo2{
+  display: flex;
+  flex-direction: column;
+}
+
+.location {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.contact{
+  display: flex;
+  flex-direction: row;
+}
+.user_title {
+  font-size: 32rpx;
+  color: #777;
+  margin-right: 5rpx;
+  margin-top: 5rpx;
+}
+.location_info {
+  margin-left: 10rpx;
+}
+.contact_info {
+  /* border-style: solid; */
+  margin-left: 10rpx;
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  /* justify-content: center; */
+  font-size: 32rpx;
+  /* line-height: 38rpx; */
+}
+
+.infor-contact {
+  /* border-style: solid; */
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 8rpx;
+  font-size: 32rpx;
+  letter-spacing: 3rpx;
+  line-height: 38rpx;
+}
+
+.text {
+  letter-spacing: 3rpx;
+  /* border-style: solid; */
+  font-size: 32rpx;
+  font-family: "SimHei";
+}
+
+.infor-contact-copy-img {
+  margin-left: 6rpx;
+  /* border-style: solid; */
+  width: 45rpx;
+  height: 45rpx;
+}
+
+.edit {
+  border-top: 2rpx solid #777;
+  margin-top: 20rpx;
+  /*border-style: solid;*/
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.share {
+  /* /*border-style: solid;*/ 
+  height: 50rpx;
+  width: 50rpx;
+  /* 不固定位置无法做到图片在上面 */
+  position: fixed;
+  top: clac(100% -800rpx);
+  right: 40rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* font-size: 24rpx; */
+  background: rgba(221, 238, 238, 0.6);
+  border-radius: 50%;
+  z-index: 10;
+}
+
+.share image {
+  /* /*border-style: solid;*/ 
+  height: 45rpx;
+  width: 45rpx;
+}
+
+.share button {
+  /* /*border-style: solid;*/ 
+  position: absolute;
+  height: 50rpx;
+  width: 50rpx;
+  opacity: 0.1;
+  z-index: 99;
+}

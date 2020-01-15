@@ -1,0 +1,233 @@
+@import "/template/cardOne/cardOne.wxss";
+@import "/template/listOne/listOne.wxss";
+@import "/template/authorization/authorization.wxss";
+@import "/template/search/search.wxss";
+
+.main {
+  background-color: white;
+}
+
+.heard {
+  width: 100%;
+  height: 90rpx;
+  display: flex;
+  /* 主轴上的对齐方式 */
+  justify-content: space-around;
+  /* 侧轴上的对齐方式 */
+  align-items: center;
+  /* 内边距 两个值分别代表 上下 和 左右 */
+  padding: 20rpx, 30rpx;
+  /* 盒子高度或宽度包括：content+padding+border，不包括margin*/
+  box-sizing: border-box;
+  background: #fcf;
+}
+
+.showForm {
+  width: 50rpx;
+  height: 50rpx;
+}
+
+.show-form {
+  width: 50rpx;
+  height: 50rpx;
+}
+
+.categoryList {
+  width: 100%;
+  height: 320rpx;
+  border-bottom: 20rpx solid #f4f4f4;
+}
+
+.category-info {
+  /* border-style: solid; */
+  display: inline-block;
+  text-align: center;
+  padding-bottom: 5rpx;
+  position: relative;
+  margin-top: 5rpx;
+  /* margin-bottom: 15rpx; */
+  height: 140rpx;
+  width: 24%;
+}
+
+.selected {
+  /* text-shadow:1px 1px 6px rgb(199, 72, 72); */
+  box-shadow: 0rpx 10rpx 50rpx 10rpx rgba(85, 85, 85, 0.10);
+  /* background-color: #d6bed6;
+  border-radius: 50%; */
+}
+
+.category-image {
+  /* border-style: groove; */
+  margin-top: 5rpx;
+  width: 90rpx;
+  height: 90rpx;
+}
+
+.category-text {
+  /* border-style: groove; */
+  font-size: 25rpx;
+  letter-spacing: 2rpx;
+  width: 100%;
+  height: 20rpx;
+  line-height: 20rpx;
+  padding: 0rpx;
+}
+
+.header-title {
+  text-align: center;
+  width: 100%;
+  height: 80rpx;
+  line-height: 80rpx;
+  font-size: 31rpx;
+  font-weight: 600;
+}
+
+.heard-location-text {
+  position: absolute;
+  overflow: hidden;
+}
+
+.page {
+  margin-left: 10rpx;
+  margin-right: 10rpx;
+  height: 1300rpx;
+  width: 100%;
+}
+
+.kind_contain {
+  width: 100%;
+  height: 90rpx;
+  background: #fff;
+  z-index: 999;
+}
+
+.swiper-tab {
+  display: flex;
+  flex-direction: row;
+  line-height: 80rpx;
+  border-bottom: 2rpx solid #777;
+}
+
+.tab-item {
+  width: 33.3%;
+  text-align: center;
+  font-family: Tahoma;
+  font-size: 15px;
+  color: #777;
+}
+
+.swiper {
+  width: 100%;
+  height: 1800rpx;
+  /* height: calc(100% - 200rpx); */
+  bottom: 0;
+  background: white;
+}
+
+.on {
+  color: #636;
+  border-bottom: 5rpx solid rgb(196, 86, 159);
+}
+
+.scroll-orders-list {
+  /* border-style: groove; */
+  height: 100%;
+  width: 100%;
+}
+
+.showOrder {
+  /* border-style: solid; */
+}
+
+.orderList {
+  width: 100%;
+  /* display: flex;   *//* flex-direction: row; *//* 两列展示*//* flex-wrap: wrap;       *//* align-items: center; *//* justify-content: space-between; */
+  padding: 15rpx;
+  /* border: 100rpx 0;
+  border-style: solid;
+  border-color: #ECECEC; */
+}
+
+.orderGrid {
+  /* position: relative; */
+  float: left;
+  padding: 20px 10px;
+  margin-right: 5rpx;
+  /* 决定列数*//* width: 50%;      */
+  box-sizing: border-box;
+}
+
+.order-content {
+  height: 250rpx;
+  width: 80%;
+  margin-left: 10rpx;
+  margin-right: 10rpx;
+  padding-left: 10rpx;
+  padding-right: 10rpx;
+  display: flex;
+  /* border:#B38B2D, 1rpx, solid; */
+  align-items: center;
+  border-bottom: 1rpx solid #ececec;
+}
+
+.order-content-image {
+  width: 300rpx;
+  height: 200rpx;
+}
+
+.order-content-info {
+  font-size: 25rpx;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.order-content-info-title, .order-content-info-price,
+.order-content-info-details, .order-content-info-number {
+  height: 42rpx;
+  line-height: 42rpx;
+  margin-left: 30rpx;
+}
+
+.order-content-info-price {
+  color: green;
+  font-size: 30rpx;
+}
+
+.left, .right {
+  /* border-style: solid; */
+  display: inline-block;
+  vertical-align: top;
+  width: 49%;
+}
+
+.right {
+  float: right;
+  margin-right: 15rpx;
+}
+
+.fixed {
+  position: fixed;
+  left: 0rpx;
+  top: 0rpx;
+}
+
+/* .nofixed {
+  height: 91rpx;
+  width: 100%;
+  background: #fff;
+} */
+
+.totop {
+  position: fixed;
+  bottom: 200rpx;
+  right: 100rpx;
+  height: 80rpx;
+  width: 80rpx;
+}
+
+.totop image {
+  height: 80rpx;
+  width: 80rpx;
+}

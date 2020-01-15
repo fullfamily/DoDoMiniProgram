@@ -1,0 +1,70 @@
+<!--miniprogram/pages/publishOrder/publishOrder.wxml-->
+<view class="container">
+  <view class='secondhand-order'>
+    <form bindsubmit="formSubmit">
+      <view class="infor">
+        <text>起点：</text>
+        <input class="infor-departure" name='departure' auto-focus placeholder="请输入起点" confirm-hold="true"/>
+      </view>
+      <view class="infor">
+        <text>终点：</text>
+        <input class="infor-destination" name='destination' auto-focus placeholder="您要去哪儿" />
+      </view>
+      <view class="infor">
+        <text>出发时间：</text>
+        <picker mode="multiSelector" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" value="{{multiIndex}}" range="{{multiArray}}">
+          <input name="departureTime" value='{{departureTime}}' placeholder='选择时间' />
+        </picker>
+      </view>
+
+      <view class="infor">
+        <text>总人数：</text>
+        <input name='totalNumber' class='infor-totalNumber' type="number" placeholder="请输入所需总人数"></input>
+      </view>
+      <view class="infor">
+        <text>价格：</text>
+        <input name='price' class='infor-price' type="number" placeholder="请输入预估总价（元）"></input>
+      </view>
+      <view class="infor">
+        <text>描述：</text>
+        <textarea name='description' class='infor-description' bindblur="bindTextAreaBlur" placeholder="请输入描述信息" auto-height />
+      </view>
+
+      <view class="infor-images">
+        <text style="padding:13px">图片：</text>
+        <view class="image_content">
+
+          <view class='image' wx:for="{{img_arr}}" wx:key="index">
+
+            <image class="moment_img" bindlongpress="deleteImg" bindtap="previewImg" data-index="{{index}}" src="{{item}}"></image>
+          </view>
+
+          <view class='image' wx:if='{{img_arr.length < maxNumber}}'>
+
+            <image bindtap="chooseImage" class="moment_img" src='/images/addImage.png'></image>
+          </view>
+        </view>
+      </view>
+      <view class="contact">
+        <text>联系方式</text>
+        <view class="infor">
+          <text>手机：</text>
+          <input name='phone' class="contact-phone" type="number"></input>
+        </view>
+        <view class="infor">
+          <text>微信：</text>
+          <input name='weChat' class="contact-phone" />
+        </view>
+        <view class="infor">
+          <text>QQ：</text>
+          <input name='qq' class="contact-phone" />
+        </view>
+      </view>
+
+      <button class='publish' form-type="submit" open-type='openSetting'>
+        <image class='publishImage' src='/images/publish.png'></image>
+        <view>发布</view>
+      </button>
+    </form>
+  </view>
+</view>

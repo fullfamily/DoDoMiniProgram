@@ -1,0 +1,14 @@
+<template name="authorization">
+    <view class='header'>
+      <image mode="aspectFit" src='/images/dodo.jpg'></image>
+    </view>
+
+    <view class='content'>
+      <view>开启DoDo之旅</view>
+      <text>需要您先授权登录获得公开信息(昵称，头像等)</text>
+    </view>
+
+    <button class='bottom' type='primary' open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="getUserInfo">
+      授权登录
+    </button>
+</template>

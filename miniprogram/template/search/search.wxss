@@ -1,0 +1,35 @@
+
+.heard-search {
+  display: flex;
+  flex-direction: row;
+  /* justify-content: space-between; */
+  align-items: center;
+  /* justify-content: center; */
+  font-size: 25rpx;
+  height: 50rpx;
+  width: 500rpx;
+  margin-left: 40rpx;
+  background: white;
+  border-radius: 25rpx;
+  line-height: 30rpx;
+  letter-spacing: 2rpx;
+}
+
+.heard-search-icon {
+  height: 30rpx;
+  width: 30rpx;
+  align-self: center;
+  margin-left: 15rpx;
+  margin-right: 15rpx;
+}
+.search-content{
+  caret-color: black;
+  color: black;
+  width:400rpx;
+  font-size: 25rpx;
+}
+.heard-clean-icon {
+  height: 30rpx;
+  width: 30rpx;
+  margin-right: 15rpx;
+}

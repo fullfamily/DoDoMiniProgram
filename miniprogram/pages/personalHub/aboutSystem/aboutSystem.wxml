@@ -1,0 +1,65 @@
+<!--pages/personalHub/aboutSystem/aboutSystem.wxml-->
+<view class="page">
+  <view class="page__bd">
+    <view class="weui-panel weui-panel_access">
+      <view class="weui-panel__hd">关于DoDo好物</view>
+      <view class="weui-panel__bd">
+        <navigator url="" class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active">
+          <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
+            <image class="weui-media-box__thumb" src="/images/personalCenter/aim.png" />
+          </view>
+          <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+            <view class="weui-media-box__title">开发目的</view>
+            <view class="weui-media-box__desc">DoDo好物致力于在高校范围内搭建一个汇集闲置与拼单信息的信息平台，便利学子们的生活。</view>
+            <!-- 以期实现资源的循环利用，帮助莘莘学子在拼单的过程中既能节省日常开支又能结交友谊， -->
+          </view>
+        </navigator>
+        <navigator url="" class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active">
+          <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
+            <image class="weui-media-box__thumb" src="/images/personalCenter/team.png" />
+          </view>
+          <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+            <view class="weui-media-box__title">开发团队</view>
+            <view class="weui-media-box__desc">
+              <view style="display:flex;flex-directions:column">
+              <view>产品经理：任兆希</view>
+              <view>UI设计：李成扬</view>
+              <view>美工：刘华兴</view>
+              <view>技术支持：曾子舰、范文浩、于海</view>
+              </view>
+            </view>
+          </view>
+        </navigator>
+        <navigator url="" class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active">
+          <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
+            <image class="weui-media-box__thumb" src="/images/personalCenter/app.png" />
+          </view>
+          <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+            <view class="weui-media-box__title">DoDo APP</view>
+            <view class="weui-media-box__desc">
+              <text>IOS版本</text>
+              <text>Android版本</text>
+            </view>
+          </view>
+        </navigator>
+        <navigator url="" class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active">
+          <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
+            <image class="weui-media-box__thumb" src="/images/personalCenter/version.png" />
+          </view>
+          <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+            <view class="weui-media-box__title">系统版本</view>
+            <view class="weui-media-box__desc">
+              DoDo好物 v1.0.0
+            </view>
+          </view>
+        </navigator>
+      </view>
+      <!-- <view class="weui-panel__ft">
+        <view class="weui-cell weui-cell_access weui-cell_link">
+          <view class="weui-cell__bd">查看更多</view>
+          <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+        </view>
+      </view> -->
+    </view>
+  </view>
+</view>

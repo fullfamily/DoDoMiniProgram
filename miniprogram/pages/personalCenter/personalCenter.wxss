@@ -1,0 +1,2 @@
+/* miniprogram/pages/personalCenter/personalCenter.wxss */
+@import "/template/authorization/authorization.wxss";

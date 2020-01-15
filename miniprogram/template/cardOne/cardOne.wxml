@@ -1,0 +1,43 @@
+<template name="cardForm">
+  <view class="card" bindtap="toOrderDetail" data-index="{{index}}" data-type="{{type}}" data-category="{{category}}">
+    <!-- <image class="card-img" src="{{item.url}}" mode="widthFix"></image> -->
+    <image class="card-img" src="{{item.images_fileID[0]}}" mode="widthFix"></image>
+    <view class="card_middle" wx:if="{{item.type == 'secondHand' || item.type == 'makeUp'}}">
+      <view class="card_title text-cut">{{item.title}}</view>
+      <view class="card_like_info">
+        <view class="card_like_number">{{item.likes}}</view>
+        <image class="card_like_icon" src="/images/like.png"></image>
+      </view>
+    </view>
+    <view class="card_middle" wx:else>
+      <view class="card_location">
+        <view class="card_departure text-cut">{{item.departure}}</view>
+        <image class="card_arrow" mode="aspectFit" src="/images/a2b.png"></image>
+        <view class="card_destination">{{item.destination}}</view>
+      </view>
+
+    </view>
+    <view class="card_bottom">
+      <view class="card_author">
+        <image bindtap="bindViewTap" class="author_avatar" src="{{item.userInfo.avatarUrl}}" mode="cover"></image>
+      </view>
+      <view class="card_info">
+        <view class="card_row1">
+          <view class="card_description">{{item.description}}</view>
+          <view class="card_nowPrice text-cut" wx:if="{{item.type == 'secondHand'}}">￥{{item.nowPrice}}</view>
+          <view class="card_nowPrice text-cut" wx:if="{{item.type == 'makeUp'}}">￥{{item.price}}</view>
+        </view>
+        <!-- <view class="card_row2" wx:if="{{item.type == 'secondHand'}}">
+          <view class="card_departureTime">
+            <view class="time">{{item.publishDate}}发布</view>
+          </view>
+        </view> -->
+        <view class="card_row2" wx:if="{{item.type == 'makeUp' || item.type == 'shareCar'}}">
+          <view class="card_departureTime">
+            <view class="time">{{item.deadline}}截止</view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</template>

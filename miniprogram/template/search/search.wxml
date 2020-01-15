@@ -1,0 +1,7 @@
+<template name="userSearch">
+  <view class="heard-search">
+    <image src="/images/search.png" class="heard-search-icon" />
+    <input class="search-content" bindinput="getUserSearchContent" bindconfirm="searchOrder" value="{{searchContent}}" placeholder="请输入搜索内容" placeholder-style="color:#e6e6e6;"></input>
+    <image src='/images/clean.png' class='heard-clean-icon' wx:if="{{searchContent}}" bindtap='clean'></image>
+  </view>
+</template>

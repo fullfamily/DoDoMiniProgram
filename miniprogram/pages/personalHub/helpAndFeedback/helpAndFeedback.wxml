@@ -1,0 +1,9 @@
+<!--pages/personalHub/helpAndFeedback/helpAndFeedback.wxml-->
+
+<view class="container">
+  <view class="help">
+    <text class='content'>请致电：</text>
+    <text class='content' bindlongtap="copy" data-content='{{phone}}'>{{phone}}</text>
+    <image class='image' bindtap="copyContact" src="/images/copy.png" data-content='{{phone}}'></image>
+  </view>
+</view>

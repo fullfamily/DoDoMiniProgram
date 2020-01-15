@@ -1,0 +1,38 @@
+@import "/template/listOne/listOne.wxss";
+
+.container{
+  background-color: white;
+}
+
+.orderList{
+  width: 100%;
+  /* display: flex;  
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15rpx; */
+}
+
+.nocontent {
+      width: 100%;
+      padding-top: 40rpx;
+      height: calc(100% - 400rpx);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      box-sizing: border-box;
+}
+
+.nocontent image {
+      /* padding-left: 80rpx; */
+      width: 300rpx;
+      height: 400rpx;
+}
+
+.blank_text {
+      padding-top: 20rpx;
+      font-size: 32rpx;
+      letter-spacing: 2rpx;
+      color: #c6c6c8;
+}

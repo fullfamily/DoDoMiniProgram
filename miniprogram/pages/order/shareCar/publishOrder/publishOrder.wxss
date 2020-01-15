@@ -1,0 +1,76 @@
+/* miniprogram/pages/publishOrder/publishOrder.wxss */
+
+.infor {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  /* border: 1rpx, solid, green; */
+  /* border-radius: 98rpx; */
+  /* border-color: #663366; */
+  padding: 13px;
+  margin-bottom: 4rpx;
+  border-bottom: 2rpx groove rgb(238, 231, 231);
+}
+
+/* .infor-title, .infor-price, .infor-class,
+.infor-description, .infor-contact {
+  background-color: white;
+  display: inline-block;
+  border-radius: 98rpx;
+  border-color: #663366;
+} */
+.contact {
+  padding: 13px;
+}
+.infor-contact {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 4rpx;
+  /* border: 1rpx, solid, wheat; */
+  padding: 13px;
+  border-bottom: 2rpx groove rgb(238, 231, 231);
+}
+.image {
+ width:31%;
+ height: 100px;
+ padding: 2px
+}
+.moment_img{
+ width: 98px;
+ height: 98px;
+}
+.image_content{
+ width: 100%;
+ display: flex;
+ flex-wrap: wrap;
+ margin-bottom: 20px
+}
+
+
+.publish {
+  width: 80%;
+  margin-top: 20rpx;
+  background-color: burlywood;
+  color: #663366;
+  border-radius: 98rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20rpx;
+}
+
+.publishImage {
+  margin-right: 8rpx;
+  width: 46rpx;
+  height: 46rpx;
+}
+
+.publish::after {
+  border-radius: 98rpx;
+  border: 0; 
+}
+
+.input {
+  background-color: white;
+}

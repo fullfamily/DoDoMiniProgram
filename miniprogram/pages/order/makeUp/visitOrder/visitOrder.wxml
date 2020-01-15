@@ -1,0 +1,92 @@
+<swiper class="swiper" indicator-dots autoplay indicator-active-color="#ff66d1" circular>
+  <block wx:for="{{img_arr}}" wx:key="index">
+    <swiper-item>
+      <image lazy-load src="{{item}}" mode="aspectFit" bindtap='previewImg' data-index="{{index}}" class="slide-image" width="355" height="200" />
+    </swiper-item>
+  </block>
+</swiper>
+<view class="container">
+  <view class="top_contain">
+    <view class="basic_info">
+      <view class="row1">
+        <view class="title  text-cut">{{orderDetail.title}}</view>
+        <!-- <view class='share'>
+        <image src='/images/share.png'></image>
+        <button open-type='share'></button>
+      </view> -->
+      </view>
+      <view class="row2">
+        <view class="price_box">
+          <view class="price">￥{{orderDetail.price}}</view>
+        </view>
+      </view>
+    </view>
+
+    <view class="like_info">
+      <view class="like_number">{{localLikes}}</view>
+      <view class="like_img">
+        <image class='like_icon' mode="aspectFit" bindtap='changeLikeState' wx:if='{{like}}' src='/images/like.png'></image>
+        <image class='like_icon' mode="aspectFit" bindtap='changeLikeState' wx:else src='/images/noLike.png '></image>
+      </view>
+    </view>
+  </view>
+  <view class="top_contain_footer">
+    <view class="category text-cut">类别: {{orderDetail.category}}</view>
+    <view class="deadline text-cut">截止时间: {{orderDetail.deadline}}</view>
+  </view>
+  <view class="space"></view>
+  <view class="middle0_contain">
+    <view class="total_number">
+      <view class="total_title">所需总人数:</view>
+      <view class="total_digit">{{orderDetail.totalNumber}}</view>
+    </view>
+    <view class="joined_number">
+      <view class="joined_title">已拼单人数:</view>
+      <view class="joined_digit">{{orderDetail.joinedNumber}}</view>
+    </view>
+  </view>
+  <view class="middle_contain">
+    <view class="sub_title">拼单详情</view>
+    <view class="description">{{orderDetail.description}}</view>
+  </view>
+  <view class="bottom_contain">
+    <view class="sub_title">联系方式</view>
+    <view class="bottom_user">
+      <view class="userInfo">
+        <image bindtap="toUserCenter" class="userinfo-avatar" src="{{orderDetail.userInfo.avatarUrl}}" mode="cover"></image>
+        <!-- <text class="userinfo-nickname">{{orderDetail.userInfo.nickName}}</text> -->
+      </view>
+      <view class="userInfo2">
+        <view class="location">
+          <view class="user_title">位置</view>
+          <view class="location_info">北大软微</view>
+        </view>
+        <view class="contact">
+          <view class="user_title">联系</view>
+          <view class="contact_info">
+            <view class="infor-contact" wx:if="{{orderDetail.contact.phone}}">
+              <text class='bold-text'>手机 </text>
+              <text selectable="true" bindlongtap="copy" data-content='{{orderDetail.contact.phone}}'>{{orderDetail.contact.phone}}</text>
+              <image wx:if='{{orderDetail.contact.phone}}' class='infor-contact-copy-img' bindtap="copyContact" data-content='{{orderDetail.contact.phone}}' src="/images/copy.png"></image>
+            </view>
+            <view class="infor-contact" wx:if="{{orderDetail.contact.weChat}}">
+              <text class='bold-text'>微信 </text>
+              <text bindlongtap="copy" data-content='{{orderDetail.contact.weChat}}'>{{orderDetail.contact.weChat}}</text>
+              <image wx:if='{{orderDetail.contact.weChat}}' class='infor-contact-copy-img' bindtap="copyContact" data-content='{{orderDetail.contact.weChat}}' src="/images/copy.png"></image>
+            </view>
+            <view class="infor-contact" wx:if="{{orderDetail.contact.qq}}">
+              <text class='bold-text'>QQ </text>
+              <text bindlongtap="copy" data-content='{{orderDetail.contact.qq}}'>{{orderDetail.contact.qq}}</text>
+              <image wx:if='{{orderDetail.contact.qq}}' class='infor-contact-copy-img' bindtap="copyContact" data-content='{{orderDetail.contact.qq}}' src="/images/copy.png"></image>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class='edit' wx:if='{{orderOwnerOpenid == userOpenid}}'>
+    <button bindtap="deleteOrder">删除</button>
+    <button bindtap="editOrder">编辑</button>
+  </view>
+</view>

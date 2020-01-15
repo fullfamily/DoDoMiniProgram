@@ -1,0 +1,180 @@
+<import src="/template/cardOne/cardOne.wxml" />
+<import src="/template/listOne/listOne.wxml" />
+<import src="/template/authorization/authorization.wxml" />
+<!-- <view wx:if="{{!hasUserInfo}}">
+  <view wx:if="{{canIUse}}">
+    <template is="authorization"></template>
+  </view>
+  <view wx:else>
+    <view>请升级微信版本</view>
+  </view>
+</view> -->
+<view>
+  <!--顶部搜索栏-->
+  <view class="heard">
+    <view class="heard-search">
+      <image src="/images/search.png" class="heard-search-icon" />
+      <input bindinput="getUserSearchContent" bindconfirm="searchOrder" placeholder="请输入搜索内容"></input>
+    </view>
+    <image bindtap="changeForm" class="show-form" src="{{isCard ? '/images/card.png' : '/images/list.png'}}"></image>
+  </view>
+  <view class="{{scrollTop>80?'nofixed':''}}">
+  </view>
+  <!-- 顶部导航栏 支持点击切换或者滑动屏幕切换 -->
+  <view class="kind_contain {{scrollTop>80?'fixed':''}}">
+    <view class="swiper-tab">
+      <view wx:for="{{orderTypeInChinese}}" wx:key="index" class="tab-item {{currentTab==index ? 'on' : ''}}">
+        <view data-current="{{index}}" bindtap="swichNav">{{item}}</view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 类别指引图标 -->
+  <swiper wx:if="{{currentTab == 0 || currentTab == 1}}" class="categoryList" indicator-dots="true" indicator-color="rgba(228,228,228,1)" indicator-active-color="#FECA49">
+    <block wx:for="{{orderClass}}" wx:key="">
+      <swiper-item>
+        <block wx:for="{{item}}" wx:key="index">
+          <view class="category-info {{num==index ? 'selected' : 'category-info'}}" bindtap='showSpecificClassOrders' data-type="{{orderType[currentTab]}}" data-category='{{item.category}}' data-index='{{index}}'>
+            <!-- data-category 还是会被转成data-category！！！！ -->
+            <image wx:if='{{item.src}}' src="{{item.src}}" class="category-image" />
+            <view class="category-text">{{item.category}}</view>
+          </view>
+        </block>
+      </swiper-item>
+    </block>
+  </swiper>
+  <!--内容主体-->
+  <view hidden="{{!isCard}}">
+    <swiper class="swiper" current="{{currentTab}}" duration="200" bindchange="swiperChange">
+      <!-- 二手展示首页 -->
+      <swiper-item>
+        <view class="scroll-orders-list" style="height:100%">
+          <view class="showOrder">
+            <view class="orderList-secondHand" wx:if="{{secondHandOrderIndex == 0}}">
+              <view class="left">
+                <block wx:for="{{secondHandOrderList}}" wx:key="index">
+                  <template is="cardForm" data="{{index:index, type:'secondHand', item:item, category:'all'}}" wx:if="{{index%2==0}}"></template>
+                </block>
+              </view>
+              <view class="right">
+                <block wx:for="{{secondHandOrderList}}" wx:key="index">
+                  <template is="cardForm" data="{{index:index, type:'secondHand', item:item, category:'all'}}" wx:if="{{index%2==1}}"></template>
+                </block>
+              </view>
+            </view>
+            <view class="orderList-secondHand" wx:else>
+              <view class="left">
+                <block wx:for="{{specificSecondHandOrderList}}" wx:key="index">
+                  <template is="cardForm" wx:if="{{index%2==0}}" data="{{index:index, type:'secondHand', item:item, category:'specific'}}"></template>
+                </block>
+              </view>
+              <view class="right">
+                <block wx:for="{{specificSecondHandOrderList}}" wx:key="index">
+                  <template is="cardForm" data="{{index:index, type:'secondHand', item:item, category:'specific'}}" wx:if="{{index%2==1}}"></template>
+                </block>
+              </view>
+            </view>
+          </view>
+        </view>
+      </swiper-item>
+      <!-- 拼单展示首页 -->
+      <swiper-item>
+        <view class="scroll-orders-list" style="height:100% width:100%">
+          <view class="showOrder">
+            <view class="orderList-makeUp" wx:if="{{makeUpOrderIndex == 0}}">
+              <view class="left">
+                <block wx:for="{{makeUpOrderList}}" wx:key="index">
+                  <template is="cardForm" data="{{index:index, type:'makeUp', item:item, category:'all'}}" wx:if="{{index%2==0}}"></template>
+                </block>
+              </view>
+              <view class="right">
+                <block wx:for="{{makeUpOrderList}}" wx:key="index">
+                  <template is="cardForm" data="{{index:index, type:'makeUp', item:item, category:'all'}}" wx:if="{{index%2==1}}"></template>
+                </block>
+              </view>
+            </view>
+            <view class="orderList-makeUp" wx:else>
+              <view class="left">
+                <block wx:for="{{specificMakeUpOrderList}}" wx:key="index">
+                  <template is="cardForm" wx:if="{{index%2==0}}" data="{{index:index, type:'makeUp', item:item, category:'specific'}}"></template>
+                </block>
+              </view>
+              <view class="right">
+                <block wx:for="{{specificMakeUpOrderList}}" wx:key="index">
+                  <template is="cardForm" data="{{index:index, type:'makeUp', item:item, category:'specific'}}" wx:if="{{index%2==1}}"></template>
+                </block>
+              </view>
+            </view>
+          </view>
+        </view>
+      </swiper-item>
+      <!-- 拼车首页 -->
+      <swiper-item>
+        <view class="showOrder">
+          <view class="orderList">
+            <view class="left">
+              <block wx:for="{{shareCarOrderList}}" wx:key="index">
+                <template is="cardForm" data="{{index:index, type:'shareCar', item:item}}" wx:if="{{index%2==0}}"></template>
+              </block>
+            </view>
+            <view class="right">
+              <block wx:for="{{shareCarOrderList}}" wx:key="index">
+                <template is="cardForm" data="{{index:index, type:'shareCar', item:item}}" wx:if="{{index%2==1}}"></template>
+              </block>
+            </view>
+          </view>
+        </view>
+      </swiper-item>
+    </swiper>
+  </view>
+
+  <view hidden="{{isCard}}">
+    <swiper class="swiper" current="{{currentTab}}" duration="200" bindchange="swiperChange">
+      <!-- 二手展示首页 -->
+      <swiper-item>
+        <view class="scroll-orders-list" style="height:100%">
+          <view class="showOrder">
+            <view class="orderList-secondHand" wx:if="{{secondHandOrderIndex == 0}}">
+              <block wx:for="{{secondHandOrderList}}" wx:key="index">
+                <template is="listForm" data="{{index:index, type:'secondHand', item:item, category:'all'}}"></template>
+              </block>
+            </view>
+            <view class="orderList-secondHand" wx:else>
+              <block wx:for="{{specificSecondHandOrderList}}" wx:key="index">
+                <template is="listForm" data="{{index:index, type:'secondHand', item:item, category:'specific'}}"></template>
+              </block>
+            </view>
+          </view>
+        </view>
+      </swiper-item>
+      <!-- 拼单展示首页 -->
+      <swiper-item>
+        <view class="scroll-orders-list" style="height:100%">
+
+          <view class="showOrder">
+            <view class="orderList-makeUp" wx:if="{{makeUpOrderIndex == 0}}">
+              <block wx:for="{{makeUpOrderList}}" wx:key="index">
+                <template is="listForm" data="{{index:index, type:'makeUp', item:item, category:'all'}}"></template>
+              </block>
+            </view>
+            <view class="orderList-makeUp" wx:else>
+              <block wx:for="{{specificMakeUpOrderList}}" wx:key="index">
+                <template is="listForm" data="{{index:index, type:'makeUp', item:item, category:'specific'}}"></template>
+              </block>
+            </view>
+          </view>
+        </view>
+      </swiper-item>
+      <!-- 拼车首页 -->
+      <swiper-item>
+        <view class="showOrder">
+          <view class="orderList">
+            <block wx:for="{{shareCarOrderList}}" wx:key="index">
+              <template is="listForm" data="{{index:index, type:'shareCar', item:item}}"></template>
+            </block>
+          </view>
+        </view>
+      </swiper-item>
+    </swiper>
+  </view>
+</view>
